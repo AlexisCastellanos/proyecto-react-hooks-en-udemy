@@ -8,11 +8,12 @@ import {
   Button,
 } from "@material-ui/core";
 
-import styles from './styles';
+import { MovieIcon } from "../../icons";
+import styles from "./styles";
 
 export default () => {
   const [searchText, setSearchText] = useState("");
-  const classes=styles();
+  const classes = styles();
 
   const handleSearchTextChange = (event) => {
     setSearchText(event.target.value);
@@ -20,23 +21,24 @@ export default () => {
 
   console.log(searchText);
 
-  const handleSearchTextClick=event =>{
-    console.log('handleSearchTextClick');
+  const handleSearchTextClick = (event) => {
+    console.log("handleSearchTextClick");
   };
 
-  const handleCleanTextClick=event =>{
-    console.log('handleCleanTextClick');
+  const handleCleanTextClick = (event) => {
+    console.log("handleCleanTextClick");
   };
 
   return (
     <Container className={classes.container}>
-      <Typography variant="h4">Home</Typography>
       <Card className={classes.cardContainer}>
         <Grid container className={classes.titleGridContainer}>
-          <Typography className={classes.title}>Bienvenido!</Typography>
-        </Grid>
-        <Grid>
-          <label> Icono</label>
+          <Grid>
+            <Typography className={classes.title}>Bienvenido!</Typography>
+          </Grid>
+          <Grid>
+            <MovieIcon className={classes.movieIcon} />
+          </Grid>
         </Grid>
         <TextField
           value={searchText}
